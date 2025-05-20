@@ -3,6 +3,10 @@ import Layout from './Layout';
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Home from './pages/Home'
+import Upload from './pages/Upload';
+import Contact from './pages/Contact'
+import About from './pages/About'
+import Buy from './pages/Buy'
 
 function App() {
 
@@ -10,7 +14,7 @@ function App() {
         const token = localStorage.getItem('token')
         if(!token)
             return <Navigate to="/login" />;
-        return <Layout>{child}</Layout>;
+        return {child};
     }
 
     function PublicRoute({ child }) {
@@ -22,16 +26,17 @@ function App() {
         <>
             <Router>
                 <Routes>
-                {/* <Route path="/" element={<Home />} /> */}
-                <Route path='/' element={<ProtectedRoute><Home /></ProtectedRoute>}></Route>
-                <Route path="/login" element={<PublicRoute><Login /></PublicRoute>}/>
-                <Route path="/register" element={<PublicRoute><Register /></PublicRoute>}/>
+                    <Route path="/" element={<Layout><Home /></Layout>} />
+                    
+                    {/* <Route path='/' element={<ProtectedRoute><Layout><Home /></Layout></ProtectedRoute>}></Route> */}
+                    <Route path="/login" element={<Login />}/>
+                    <Route path="/register" element={<Register />}/>
             
 
-            {/* <Route path="/upload" element={<Upload />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/buy" element={<BuyCredits />} /> */}
+                    <Route path="/upload" element={<Layout><Upload /></Layout>} />
+                    <Route path="/contact" element={<Layout><Contact /></Layout>} />
+                    <Route path="/about" element={<Layout><About /></Layout>} />
+                    <Route path="/buy" element={<Layout><Buy /></Layout>} />
                 </Routes>
             </Router>
 
