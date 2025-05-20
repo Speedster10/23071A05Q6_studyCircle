@@ -3,7 +3,6 @@ export default function Buy() {
     function handleClick(e) {
         e.preventDefault();
         const amount = e.target[0].value;
-        // add credits to that user
     }
 
     return(

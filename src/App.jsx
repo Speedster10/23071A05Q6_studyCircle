@@ -1,12 +1,13 @@
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import Layout from './Layout';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
+import Layout from './Layout'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Home from './pages/Home'
-import Upload from './pages/Upload';
+import Upload from './pages/Upload'
 import Contact from './pages/Contact'
 import About from './pages/About'
 import Buy from './pages/Buy'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
 
@@ -28,7 +29,6 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Layout><Home /></Layout>} />
                     
-                    {/* <Route path='/' element={<ProtectedRoute><Layout><Home /></Layout></ProtectedRoute>}></Route> */}
                     <Route path="/login" element={<Login />}/>
                     <Route path="/register" element={<Register />}/>
             

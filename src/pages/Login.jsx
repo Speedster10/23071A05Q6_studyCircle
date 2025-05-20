@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// Import users from JSON (will work with Vite if the file is populated)
 import users from '../database/auth.json';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Login() {
     const [Name, setName] = useState('');
@@ -11,7 +11,6 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Combine users from auth.json and localStorage
         let localUsers = [];
         try {
             localUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];

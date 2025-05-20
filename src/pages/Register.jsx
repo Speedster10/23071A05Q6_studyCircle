@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default function Register() {
     const [Name, setName] = useState('');
@@ -19,7 +20,6 @@ export default function Register() {
             setError('Passwords do not match.');
             return;
         }
-        // Use localStorage to simulate user database
         let users = [];
         try {
             users = JSON.parse(localStorage.getItem('registeredUsers')) || [];

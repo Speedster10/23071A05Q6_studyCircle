@@ -1,5 +1,6 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 export default function Home() {
-    // Example uploaded file data
     const uploadedFiles = [
         { name: 'math_notes.pdf', credits: 5 },
         { name: 'physics_cheatsheet.docx', credits: 3 },
