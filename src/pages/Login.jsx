@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import users from '../database/auth.json';
 
 function Login() {
-    const [email, setEmail] = useState('');
+    const [Name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
@@ -19,12 +19,12 @@ function Login() {
             localUsers = [];
         }
         const allUsers = Array.isArray(users) ? users.concat(localUsers) : localUsers;
-        const found = allUsers.find(u => u.email === email && u.password === password);
+        const found = allUsers.find(u => u.Name === Name && u.password === password);
         if (found) {
             localStorage.setItem('token', 'dummy-token');
             navigate('/');
         } else {
-            setError('Invalid email or password');
+            setError('Invalid Name or password');
         }
     };
 
@@ -34,12 +34,12 @@ function Login() {
                 <h2 className="text-3xl font-extrabold mb-8 text-center text-blue-700 tracking-tight">Login</h2>
                 {error && <div className="mb-4 text-red-600 font-semibold text-center">{error}</div>}
                 <div className="mb-4">
-                    <label className="block mb-2 text-sm font-semibold text-gray-700">Email</label>
+                    <label className="block mb-2 text-sm font-semibold text-gray-700">Name</label>
                     <input
-                        type="email"
+                        type="text"
                         className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
+                        value={Name}
+                        onChange={e => setName(e.target.value)}
                         required
                     />
                 </div>

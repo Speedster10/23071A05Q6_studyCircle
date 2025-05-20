@@ -3,7 +3,7 @@ export default function Buy() {
     function handleClick(e) {
         e.preventDefault();
         const amount = e.target[0].value;
-        console.log(amount);
+        // add credits to that user
     }
 
     return(
@@ -11,7 +11,7 @@ export default function Buy() {
             <h1>Buy Credits!</h1>
             <form onSubmit={handleClick}>
                 <input type="number" />
-                <button type="submit" name="Submit"/>
+                <button type="submit" />
             </form>
         </>
     );

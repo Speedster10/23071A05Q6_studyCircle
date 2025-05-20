@@ -30,8 +30,7 @@ export default function Register() {
             setError('Name already registered.');
             return;
         }
-        const Credits = 0;
-        users.push({ Name, password, Credits });
+        users.push({ Name, password });
         localStorage.setItem('registeredUsers', JSON.stringify(users));
         setSuccess('Registration successful! You can now log in.');
         setName('');
